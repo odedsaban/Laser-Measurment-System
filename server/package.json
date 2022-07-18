@@ -1,0 +1,9 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
