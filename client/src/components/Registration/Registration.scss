@@ -1,0 +1,22 @@
+
+.registrationPage{
+    fieldset{
+        width:auto;
+        .MuiFormGroup-root{
+            display:flex;
+            flex-direction: row;
+            gap: 8px;
+        }
+        .MuiFormControlLabel-root{
+            margin-left:0!important;
+        }
+
+    }        
+    .MuiButton-contained .MuiButton-label{
+        display:flex;
+        gap:5px;
+    }
+    .MuiButton-containedSizeLarge{
+        padding:10px;
+    }
+}

@@ -1,0 +1,52 @@
+.StatisticGrid{
+    display:flex;
+    width:100%;
+    gap:15px;
+    
+    .StatisticGridItem{
+        flex:1 1 auto;
+        min-height:135px;
+        max-width:200px;
+        padding:1.25rem;
+        border: 1px solid rgba(0,0,0,.105);
+        color:white;
+
+        &:nth-child(1)
+        {
+            background:#39f!important;
+        }        
+        &:nth-child(2)
+        {
+            background:#2eb85c!important;
+        }        
+        &:nth-child(3)
+        {
+            background:#f9b115!important;
+        }
+        .icon{
+            margin-bottom:20px;
+
+            .MuiSvgIcon-root{
+                color:rgba(255,255,255,.6)!important;
+                width: 2rem;
+                height: 2rem;
+                font-size: 2rem;
+            }
+        }
+        span{
+            width:100%;
+            display:flex;
+            font-weight:300;
+            &.data{
+                color:currentColor;
+                font-size:22px;
+            }
+            &.text{
+                font-size:15px;
+                opacity:0.8;
+            }
+        }
+
+
+    }
+}

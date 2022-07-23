@@ -1,0 +1,22 @@
+import React, { useState } from "react";
+
+export const ProcessSelection = ({ setIsProcessSelected , setPageTitel }) => {
+  // setPageTitel('בחירת מסד נתונים');
+  return (
+    <div className="dbChoseContainer">
+        <h1>Select Process</h1>
+        <ul className="dbTypesList fieldsArea">
+          <li onClick={() => setIsProcessSelected(true)}>
+            <img src="/images/cylinder-1.jpg" />
+            <span className="title">Process type 1</span>
+          </li>
+          <li onClick={() => setIsProcessSelected(true)}>
+            <img src="/images/cylinder-1.jpg" />
+            <span className="title">Process type 2</span>
+          </li>
+          <li></li>
+          <li></li>
+        </ul>
+    </div>
+  );
+};
