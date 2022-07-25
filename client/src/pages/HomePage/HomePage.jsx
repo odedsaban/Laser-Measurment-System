@@ -62,7 +62,7 @@ const HomePage = ({ setNavigationText }) => {
 
         <div class="whiteBlock">
             <div className="top flexedSpaced">
-              Title
+            Cylinder History
               <Link to="/" className="settingsBtn"><SettingsIcon /></Link>
 
 

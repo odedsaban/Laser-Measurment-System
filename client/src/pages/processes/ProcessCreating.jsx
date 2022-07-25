@@ -19,22 +19,9 @@ function ProcessCreating({  setPageTitel }) {
             <div className="innerTitle">Process Data</div>
 
             <div className="allFields fieldsArea flexedWrap basicFields">
+
               <div className="field">
-                <label>Choose Dashboard:</label>
-                <div class="inputField">
-                  <select
-                    name="Dashboards"
-                  >
-                    <option disabled selected value>
-                      {" "}
-                      -- select an option --{" "}
-                    </option>
-                    <option value={'test'}>test</option>
-                  </select>
-                </div>
-              </div>
-              <div className="field">
-                <label>כותרת</label>
+              <label>label label</label>
                 <div class="inputField">
                   <input
                     type="text"
@@ -43,7 +30,7 @@ function ProcessCreating({  setPageTitel }) {
               </div>
 
               <div className="field">
-                <label>כותרת ציר x:</label>
+                <label>label label</label>
                 <div class="inputField">
                   <input
                     type="text"
@@ -55,10 +42,12 @@ function ProcessCreating({  setPageTitel }) {
               {/* <div className="flex"><label>Choose DB: </label><DatabaseSelectField databases = {databases} onSelectDB={onChangeDB}/>  </div>
             <div className="flex"><label>Choose Table:</label> <TablesSelect Tables= {dataTables} onSelectTable={onChangeTable}/> </div> */}
             </div>
-            <Cylinder />
+            
 
           </div>
-
+            <div class="leftContainer">
+            <Cylinder />
+            </div>
         </Tabs>
       </div>
     </div>

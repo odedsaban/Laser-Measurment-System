@@ -1,6 +1,4 @@
-import { TextField } from "@material-ui/core";
-import React, { useState } from "react";
-import axios from "../../../axios";
+import React, { useState } from "react"
 import { useAlert } from "react-alert"
 
 export const ProcessInfo = ({
@@ -57,7 +55,7 @@ export const ProcessInfo = ({
                 setValidProcessInfo(true)
               }}
             >
-              שלח
+              Continue
             </button>
           </div>
         </form>

@@ -5,6 +5,7 @@
   justify-content: center;
   filter: blur(1.2px);
   background-color: #000;
+  margin:0px auto;
 }
 
 .cylinderContainer {
@@ -66,4 +67,9 @@
 @keyframes lighting2 {
   from, to { background-color: #fff; }
   50% { background-color: #000; }
+}
+
+.cylinderAll{
+  display:flex;
+  width:100%;justify-content: center;
 }
