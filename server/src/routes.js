@@ -1,9 +1,8 @@
 const express = require('express');
 const Mongo = require('./mongo');
 const router = express.Router();
-const connectionString = 'mongodb+srv://username:username@cluster.a1jyk.mongodb.net/db?retryWrites=true&w=majority';
 
-const mongo = new Mongo(connectionString);
+const mongo = new Mongo();
 
 router.get('/process', async (req, res) => {
     try {
@@ -36,9 +35,5 @@ router.post('/process', async (req, res) =>{
         return res.status(500);
     }
 });
-
-router.post('/store-process', async (req, res) => {
-
-})
 
 module.exports = router;

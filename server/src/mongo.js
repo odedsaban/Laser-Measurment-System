@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const collection = 'processes';
 class Mongo {
-    constructor(connectionString) {
-        this.mongo = mongoose.createConnection(connectionString);
+    constructor() {
+        this.mongo = mongoose.createConnection('mongodb+srv://username:username@cluster.a1jyk.mongodb.net/db?retryWrites=true&w=majority');
     }
 
     async insert(data) {
