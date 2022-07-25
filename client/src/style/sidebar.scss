@@ -1,0 +1,63 @@
+.sidebar {
+  min-width:256px;width:256px;margin-right:-256px;background:#2a78c5;position:sticky;height:100vh;top:56px;transition: all 0.5s ease-in-out;
+  a{text-decoration:none;}
+  .textSideIcon {
+    background:none;width:100%;border-bottom:0px solid #8c9ab038;cursor:pointer;
+    font-size:15px;font-weight:400;box-sizing:border-box;position:relative;height:40px;width:100%;height: 48px;color:rgba(255,255,255,0.8);padding:15px;display:flex;align-items:center;transition: all 0.5s ease-in-out;
+  }
+  button.textSideIcon{display:flex;justify-content: space-between;align-items: center;}
+  .textSideIcon:hover{background:#3c85cd;color:white;}
+  .active .textSideIcon{border-width:1px;color:white;}
+  .icon {
+    vertical-align: text-bottom;
+    margin-left: 1rem;
+  }
+
+  .toggleItems {
+    max-height:0;
+    transition:all 0.3s ease-in-out;
+    overflow:hidden;
+    display: flex;
+    background:#3631702b;
+    flex-direction: column;
+    width:100%;
+    .toggleItem {
+      width:100%;
+      font-size:14px;
+      padding: 15px 15px;
+      text-decoration:none!important;
+      color: rgba(255,255,255,0.8);
+      border-bottom:1px solid #ffffff3d;
+    }
+  
+  }
+
+  .headToggle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-bottom:1px solid #5c92c8;
+    cursor: pointer;
+  }
+  .headToggle button > svg{fill: rgba(255,255,255,0.8);width:21px;transform: rotate(-180deg);}
+  .headToggle.active{
+    .toggleItems{max-height:1000px;}
+  }
+  .headToggle.active button > svg{transform: rotate(270deg);fill:white;}
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial;
+    height: 56px;
+    width: 100%;
+    background: #303c54;
+    color: white;
+    font-size: 28px;
+  }
+}
+.sideBarVisible .sidebar{margin-right:0;top:0;
+display:flex;
+flex-direction: column;
+padding-block-start:130px;
+}

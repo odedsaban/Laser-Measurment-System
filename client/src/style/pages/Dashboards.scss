@@ -1,0 +1,22 @@
+.graphsList{
+    gap:15px;
+    height:auto;
+    min-height:500px;
+
+    .graphItem{
+        width:calc((100% - 15px) / 2);
+        min-height:250px;
+        display:flex;
+        flex-direction: column;
+
+
+        .graphContainer{
+            flex:1 0; 
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            width: 100%;
+        }
+    }
+}
+.recharts-wrapper{margin:0px auto!important;}

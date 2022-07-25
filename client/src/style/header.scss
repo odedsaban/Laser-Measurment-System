@@ -1,0 +1,25 @@
+
+header{
+    background-color: white;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    position:sticky;
+    top:0;
+    .textLogo{
+        color: white;
+        span{
+            color: red;
+        }
+    }
+    .menu__btn{background:none;display:flex;align-items:center;position:relative;width:26px;height:26px;cursor:pointer;z-index:1;margin-right:20px;}
+    .menu__btn>span,.menu__btn>span::after,.menu__btn>span::before{display:block;position:absolute;width:100%;height:2px;background-color:#616161;transition-duration:.25s}
+    .menu__btn>span::before{content:'';top:-8px}
+    .menu__btn>span::after{content:'';top:8px}
+}
+.sideBarVisible header{
+        .menu__btn > span{ transform: rotate(-45deg); }
+        .menu__btn > span::before{top:0;transform:rotate(0)}
+        .menu__btn > span::after{top:0;transform:rotate(90deg)}   
+}
