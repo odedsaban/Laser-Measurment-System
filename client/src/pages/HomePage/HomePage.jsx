@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SettingsIcon from '@material-ui/icons/Settings';
 import StatisticGrid from "./components/StatisticGrid";
 import DashboardTabs from "./components/DashboardTabs";
+import Cylinder from "./components/Cylinder";
 import PropTypes from "prop-types";
 import axios from "../../axios";
 import "./HomePage.scss"
@@ -59,7 +60,6 @@ const HomePage = ({ setNavigationText }) => {
     <div className="homePage">
       <StatisticGrid usersAmount={usersList.length} dashboardsAmount={dashboardInfo.length} graphsAmount={usersList.length} />
       <div className="all fullWidth">
-
         <div class="whiteBlock">
             <div className="top flexedSpaced">
             Cylinder History

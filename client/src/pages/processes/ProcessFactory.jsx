@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProcessCreating from "./ProcessCreating";
+import ProcessCreating from "./ProcessCreatingData";
 
 //import components
 import { ProcessSelection } from "./ProcessesComponents/ProcessSelection";

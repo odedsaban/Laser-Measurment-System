@@ -9,7 +9,6 @@ export const Cylinder = () =>{
         for(let i = 0;i< amount;i++){
             rings+='<div class="ring"></div>';
         }
-        console.log(rings);
         return rings;
     }
    return (

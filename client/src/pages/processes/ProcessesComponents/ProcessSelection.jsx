@@ -7,7 +7,7 @@ export const ProcessSelection = ({ setIsProcessSelected , setPageTitel }) => {
         <h1>Select Process</h1>
         <ul className="dbTypesList fieldsArea">
           <li onClick={() => setIsProcessSelected(true)}>
-            <img src="/images/cylinder-3.jpeg" />
+            <img src="/images/cylinder-1.jpeg" />
             <span className="title">Process type 1</span>
           </li>
           <li onClick={() => setIsProcessSelected(true)}>

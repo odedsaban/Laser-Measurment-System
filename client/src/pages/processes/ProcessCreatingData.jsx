@@ -4,70 +4,70 @@ import React ,{useState,useEffect} from "react";
 // import TablesSelect from './TablesSelect';
 import {  Tabs } from "react-tabs";
 import Button from "@material-ui/core/Button";
-import dataText from './sample.txt';
+import dataTxt from './sample.txt';
 
 
 function ProcessCreating({  setPageTitel }) {
 
   setPageTitel('Process Creating');
-  fetch(dataText)
-  .then(response => response.text())
-  .then(data => {
-    const allLines = data.split(/\r\n|\n/);
-
-    allLines.forEach((line) => {
-
-        let cleanLine = line.replaceAll('\x00', '');
-        cleanLine = cleanLine.replaceAll('\r', '');
-
-        const columnValues = cleanLine.split(/\t/);
-
-        console.log(columnValues);
-    });
-  });
   const [dotesValues,setDotsValues] = useState({valA: 0,valB: 0,valC: 0});
   const [tragets,setTargets] = useState({targetA: 0,targetB: 0,targetC: 0});
   const [status,setStatus] = useState({statusA: 0,statusB: 0,statusC: 0});
+  const [data,setSdata] = useState();
+  const [counter,setCounter] = useState(1);
   const [isCylinderActive,setIsCylinderActive] = useState(false);
   // || tragets.targetB > dotesValues.valB || tragets.targetC > dotesValues.valC
+    useEffect(() => {
+        fetch(dataTxt)
+        .then(response => response.text())
+        .then(data => {
+            const allLines = data.split(/\r\n|\n/);
+            let rows =[];
+            let counter = 0;
+            allLines.forEach((line) => {
+                let cleanLine = line.replaceAll('\x00', '');
+                cleanLine = cleanLine.replaceAll('\r', '');
+                const columnValues = cleanLine.split(/\t/);
+                rows[counter++]={proba: columnValues[2],probb: columnValues[3] ,probc: columnValues[4]}
+                // console.log(columnValues);
+            });
+            setSdata(rows)
+        });
+    },[])
 
-  useEffect(() => {
+    useEffect(() => {
     if(status.statusA && status.statusB && status.statusC && isCylinderActive){
-      toggleCylinder();
+        toggleCylinder();
     }
-  },[status.statusA,status.statusB,status.statusC]);
-  useEffect(() => {
-    if(isCylinderActive){
-      console.log('called')
-      const timer = setTimeout(() => handleChangeDotDemo(), 1000)
-      return () => clearTimeout(timer)
-    }
-   }, [dotesValues.valA,dotesValues.valB,dotesValues.valC, isCylinderActive])
+    },[status.statusA,status.statusB,status.statusC]);
 
-   function handleChangeDotDemo(){
-    console.log('handleChangeDot a')
-    if(tragets.targetA > dotesValues.valA){
-      setDotsValues((state)=>({...state, valA: state.valA + 0.5}))
+    useEffect(() => {
+    if(isCylinderActive){
+        const interval = setInterval(() => {
+            setCounter((state)=> state + 1)
+            getDataRow(counter);
+        }, 2000);
+        return () => clearInterval(interval);
     }
-    else{
-      setStatus((state)=>({...state,statusA:1}))
+    }, [isCylinderActive,counter]);
+
+
+    const getDataRow = (rowNumber)=>{
+        console.log(data.length);
+        if(rowNumber < 15){
+            setDotsValues({valA: data[rowNumber].proba,valB: data[rowNumber].probb,valC: data[rowNumber].probc})
+        }
+        else{
+            setIsCylinderActive(false);
+            setStatus({statusA:1,statusB:1,statusC:1});
+        }
+        
     }
-    if(tragets.targetB > dotesValues.valB){
-      setDotsValues((state)=>({...state, valB: state.valB + 0.5}))
+
+    const toggleCylinder = ()=>{
+        setIsCylinderActive((state) => !state);
     }
-    else{
-      setStatus((state)=>({...state,statusB:1}))
-    }
-    if(tragets.targetC > dotesValues.valC){
-      setDotsValues((state)=>({...state, valC: state.valC + 0.5}))
-    }
-    else{
-      setStatus((state)=>({...state,statusC:1}))
-    }
-  }
-  const toggleCylinder = ()=>{
-    setIsCylinderActive((state) => !state);
-  }
+
   return (
     <div className="fullWidth ProcessCreatingPage">
       <div class="innerContainer ">

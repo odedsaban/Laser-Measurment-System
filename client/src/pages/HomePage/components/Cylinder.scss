@@ -1,0 +1,41 @@
+$pi: 3.14159265358979;
+$cylinder-width: 1000px;
+$face-count: 50;
+$face-deg: (360deg / $face-count);
+$face-width: ($cylinder-width / $face-count);
+$face-shift: ($cylinder-width / $pi / 2);
+.containerCylinder{transform: rotate(-90deg);}
+.holder {
+  transform-style: preserve-3d;
+  transform: rotateX(-35deg);
+  zoom: 0.45;
+}
+.cylinder {
+  position: relative;
+  height: auto;
+  width: $cylinder-width;
+  transform-style: preserve-3d;
+  animation: spin 7s infinite linear;
+  &.pause{
+    animation-play-state: paused;
+  }
+}
+.face {
+  position: absolute;
+  background-color: #a6a6a6;
+  opacity: 0.7;
+  height: 1000px;
+  width: $face-width;
+  top: 50%;
+  left: 50%;
+  transform: rotateY(calc(#{$face-deg} * var(--index)))
+    translateZ(calc(#{$face-shift} - -6px));
+//   &:nth-child(1) {
+//     background: #787272;
+//   }
+}
+@keyframes spin {
+  to {
+    transform: rotateY(-360deg);
+  }
+}
