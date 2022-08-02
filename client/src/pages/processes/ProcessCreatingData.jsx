@@ -79,35 +79,32 @@ function ProcessCreating({  setPageTitel }) {
             <div className="allFields fieldsArea flexedWrap basicFields">
 
               <div className="field">
-              <label>A Target</label>
+              <label>A Value</label>
                 <div class="inputField">
                   <input
                     type="text"
-                    value={tragets.targetA}
-                    onChange={(e)=>setTargets((state)=>({...state, targetA:e.target.value}))}
+                    value={dotesValues.valA}
                     disabled={isCylinderActive}
                   />
                 </div>
               </div>
 
               <div className="field">
-                <label>B Target</label>
+                <label>B Value</label>
                 <div class="inputField">
                   <input
                     type="text"
-                    value={tragets.targetB}
-                    onChange={(e)=>setTargets((state)=>({...state, targetB:e.target.value}))}
+                    value={dotesValues.valB}
                     disabled={isCylinderActive}
                   />
                 </div>
               </div>
               <div className="field">
-                <label>C Target</label>
+                <label>C Value</label>
                 <div class="inputField">
                   <input
                     type="text"
-                    value={tragets.targetC}
-                    onChange={(e)=>setTargets((state)=>({...state, targetC:e.target.value}))}
+                    value={dotesValues.valC}
                     disabled={isCylinderActive}
                   />
                 </div>
