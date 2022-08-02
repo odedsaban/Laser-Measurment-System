@@ -9,7 +9,7 @@ import dataText from './sample.txt';
 
 function ProcessCreating({  setPageTitel }) {
 
-  setPageTitel('Process Creating');
+  // setPageTitel('Process Creating');
   fetch(dataText)
   .then(response => response.text())
   .then(data => {
@@ -22,7 +22,6 @@ function ProcessCreating({  setPageTitel }) {
 
         const columnValues = cleanLine.split(/\t/);
 
-        console.log(columnValues);
     });
   });
   const [dotesValues,setDotsValues] = useState({valA: 0,valB: 0,valC: 0});

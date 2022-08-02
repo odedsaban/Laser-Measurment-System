@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useAlert } from "react-alert"
 
 export const ProcessInfo = ({
-  isProcessSelected,
+  selectedProcess,
   validProcessInfo,
   setValidProcessInfo,
   setPageTitel
@@ -15,7 +15,7 @@ export const ProcessInfo = ({
 
   return (
     <div class="allFields flexedWrap basicFields dbConfigFrom">
-      {isProcessSelected && !validProcessInfo ? (
+      {selectedProcess && !validProcessInfo ? (
         <form action="">
            <div className="field">
             <label>Shape Height:</label>

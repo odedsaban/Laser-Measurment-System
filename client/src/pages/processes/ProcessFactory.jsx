@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProcessCreating from "./ProcessCreatingData";
+import ProcessCreatingv2 from "./ProcessCreating";
 
 //import components
 import { ProcessSelection } from "./ProcessesComponents/ProcessSelection";
@@ -22,34 +23,37 @@ export const ProcessFactory = ({setNavigationText}) => {
     dbConfig: {},
     tableInfo: { tableName: "", columnNameInt: "", columnNameString: "" },
   });
-  const [isProcessSelected, setIsProcessSelected] = useState(false);
+  const [selectedProcess, setSelectedProcess] = useState(false);
   const [validProcessInfo, setValidProcessInfo] = useState(false);
   const [isValidTableInfo, setIsValidTableInfo] = useState(false);
-  console.log('isValidTableInfo ' + isValidTableInfo);
-  console.log('validProcessInfo ' + validProcessInfo);
-  console.log('isProcessSelected ' + isProcessSelected);
-
+console.log(selectedProcess);
+const getProcess =() => {
+  switch(selectedProcess){
+    case 1: return <ProcessCreating setPageTitel={setPageTitel}/>
+    default: return <ProcessCreatingv2 setPageTitel={setPageTitel}/>
+  }
+}
   return (
     <div className="whiteBlock fullWidth basicTables usersDataPage">
       <div className="top">
         {pageTitel}
       </div>
       <div className="innerContainer basicBlockSpaces">
-        {isProcessSelected === false && (
-          <ProcessSelection isProcessSelected={isProcessSelected} setIsProcessSelected={setIsProcessSelected} setPageTitel={setPageTitel}/>
+        {selectedProcess === false && (
+          <ProcessSelection selectedProcess={selectedProcess} setSelectedProcess={setSelectedProcess} setPageTitel={setPageTitel}/>
         )}
         {!validProcessInfo && (
           <ProcessInfo
             setDbInfo={setDbInfo}
             dbInfo={dbInfo}
-            isProcessSelected={isProcessSelected}
+            selectedProcess={selectedProcess}
             validProcessInfo={validProcessInfo}
             setValidProcessInfo={setValidProcessInfo}
             setPageTitel={setPageTitel}
           />
         )}
 
-        {validProcessInfo === true && <ProcessCreating dbInfo={dbInfo} setPageTitel={setPageTitel} />}
+        {validProcessInfo === true && getProcess()}
       </div>
     </div>
   );
